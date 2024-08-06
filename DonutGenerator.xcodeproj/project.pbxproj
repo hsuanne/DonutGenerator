@@ -13,6 +13,7 @@
 		D9D4BC662C5CC53B0096B47B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D9D4BC652C5CC53B0096B47B /* Base */; };
 		D9D4BC682C5CC53E0096B47B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D4BC672C5CC53E0096B47B /* Assets.xcassets */; };
 		D9D4BC6B2C5CC53E0096B47B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D9D4BC6A2C5CC53E0096B47B /* Base */; };
+		D9D4BC752C5CC5E30096B47B /* FoodTruckKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9D4BC742C5CC5E30096B47B /* FoodTruckKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D9D4BC672C5CC53E0096B47B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9D4BC6A2C5CC53E0096B47B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9D4BC6C2C5CC53E0096B47B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9D4BC722C5CC5DA0096B47B /* FoodTruckKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FoodTruckKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D4BC752C5CC5E30096B47B /* FoodTruckKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +43,10 @@
 		D9D4BC522C5CC53B0096B47B = {
 			isa = PBXGroup;
 			children = (
+				D9D4BC722C5CC5DA0096B47B /* FoodTruckKit */,
 				D9D4BC5D2C5CC53B0096B47B /* DonutGenerator */,
 				D9D4BC5C2C5CC53B0096B47B /* Products */,
+				D9D4BC732C5CC5E30096B47B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +72,13 @@
 			path = DonutGenerator;
 			sourceTree = "<group>";
 		};
+		D9D4BC732C5CC5E30096B47B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +95,9 @@
 			dependencies = (
 			);
 			name = DonutGenerator;
+			packageProductDependencies = (
+				D9D4BC742C5CC5E30096B47B /* FoodTruckKit */,
+			);
 			productName = DonutGenerator;
 			productReference = D9D4BC5B2C5CC53B0096B47B /* DonutGenerator.app */;
 			productType = "com.apple.product-type.application";
@@ -363,6 +378,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D9D4BC742C5CC5E30096B47B /* FoodTruckKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FoodTruckKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D9D4BC532C5CC53B0096B47B /* Project object */;
 }
