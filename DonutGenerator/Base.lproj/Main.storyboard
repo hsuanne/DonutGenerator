@@ -29,14 +29,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVC-93-TZy" userLabel="topping">
                                 <rect key="frame" x="76" y="120" width="241" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWG-Lf-VPe">
-                                <rect key="frame" x="153" y="294" width="87" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="CREATE"/>
-                                <connections>
-                                    <action selector="createRandomDonut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMY-b9-ktU"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-yt-qwf">
                                 <rect key="frame" x="76" y="377" width="241" height="32"/>
                                 <segments>
@@ -65,17 +57,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-Zm-kAm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-Zm-kAm">
                                                     <rect key="frame" x="8" y="67" width="84" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4vl-ob-ejD">
+                                                    <rect key="frame" x="8" y="8" width="84" height="63"/>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gQp-Zm-kAm" firstAttribute="bottom" secondItem="rDl-Js-XFp" secondAttribute="bottomMargin" id="1r3-rk-8CC"/>
+                                                <constraint firstItem="gQp-Zm-kAm" firstAttribute="trailing" secondItem="rDl-Js-XFp" secondAttribute="trailingMargin" id="4N2-s1-QLT"/>
+                                                <constraint firstItem="gQp-Zm-kAm" firstAttribute="leading" secondItem="rDl-Js-XFp" secondAttribute="leadingMargin" id="8ZE-Xn-ss1"/>
+                                                <constraint firstItem="gQp-Zm-kAm" firstAttribute="top" secondItem="rDl-Js-XFp" secondAttribute="top" constant="67" id="IBd-zr-rpc"/>
+                                                <constraint firstAttribute="bottom" secondItem="4vl-ob-ejD" secondAttribute="bottom" constant="29" id="Myg-TZ-SNN"/>
+                                                <constraint firstItem="gQp-Zm-kAm" firstAttribute="leading" secondItem="4vl-ob-ejD" secondAttribute="leading" id="haQ-GF-fzp"/>
+                                                <constraint firstItem="gQp-Zm-kAm" firstAttribute="trailing" secondItem="4vl-ob-ejD" secondAttribute="trailing" id="olW-Oi-63u"/>
+                                                <constraint firstItem="4vl-ob-ejD" firstAttribute="top" secondItem="rDl-Js-XFp" secondAttribute="topMargin" id="rad-Xl-ffg"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="donutLabel" destination="gQp-Zm-kAm" id="SZ8-88-urC"/>
+                                            <outlet property="donutThumbnail" destination="4vl-ob-ejD" id="vm9-Qe-jNE"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -84,6 +89,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SOK-tn-hlu"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWG-Lf-VPe">
+                                <rect key="frame" x="148" y="294" width="97" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="RANDOM" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="createRandomDonut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMY-b9-ktU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -101,7 +114,6 @@
                             <constraint firstItem="MVC-93-TZy" firstAttribute="centerX" secondItem="dsw-S2-7by" secondAttribute="centerX" id="OBY-pc-7KB"/>
                             <constraint firstItem="q8p-qi-EgN" firstAttribute="trailing" secondItem="YQ8-yt-qwf" secondAttribute="trailing" id="PUb-PX-sqO"/>
                             <constraint firstItem="dsw-S2-7by" firstAttribute="top" secondItem="YQ8-yt-qwf" secondAttribute="bottom" constant="8" id="RA2-92-ZYi"/>
-                            <constraint firstItem="eWG-Lf-VPe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="153" id="Ukg-Io-YaT"/>
                             <constraint firstItem="QtC-Ju-7zU" firstAttribute="trailing" secondItem="q8p-qi-EgN" secondAttribute="trailing" id="eOj-nC-XDM"/>
                             <constraint firstItem="MVC-93-TZy" firstAttribute="leading" secondItem="q8p-qi-EgN" secondAttribute="leading" id="eet-Z0-c8K"/>
                             <constraint firstItem="eWG-Lf-VPe" firstAttribute="centerX" secondItem="YQ8-yt-qwf" secondAttribute="centerX" id="ehs-5h-aE1"/>

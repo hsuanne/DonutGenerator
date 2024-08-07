@@ -96,12 +96,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         switch donutSegmentControl.selectedSegmentIndex {
         case 0:
             cell.donutLabel.text = mapDoughToNames(doughs: Donut.Dough.all)[indexPath.row]
+            cell.donutThumbnail.image = Donut.Dough.all[indexPath.row].uiImage(thumbnail: false)
             
         case 1:
             cell.donutLabel.text = mapGlazeToNames(glazes: Donut.Glaze.all)[indexPath.row]
+            cell.donutThumbnail.image = Donut.Glaze.all[indexPath.row].uiImage(thumbnail: false)
 
         case 2:
             cell.donutLabel.text = mapToppingToNames(toppings: Donut.Topping.all)[indexPath.row]
+            cell.donutThumbnail.image = Donut.Topping.all[indexPath.row].uiImage(thumbnail: false)
 
         default:
             cell.donutLabel.text = mapDoughToNames(doughs: Donut.Dough.all)[indexPath.row]
@@ -112,7 +115,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        <#code#>
+//        let size = (collectionView.frame.size.width - 10)/3
+//        return CGSize(width: size, height: size)
 //    }
     
 }
