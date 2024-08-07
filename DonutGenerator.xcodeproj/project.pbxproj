@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D94C6AF62C6206E4007BA7C0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C6AF52C6206E4007BA7C0 /* CollectionViewCell.swift */; };
 		D9D4BC5F2C5CC53B0096B47B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D4BC5E2C5CC53B0096B47B /* AppDelegate.swift */; };
 		D9D4BC612C5CC53B0096B47B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D4BC602C5CC53B0096B47B /* SceneDelegate.swift */; };
 		D9D4BC632C5CC53B0096B47B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D4BC622C5CC53B0096B47B /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D94C6AF52C6206E4007BA7C0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D9D4BC5B2C5CC53B0096B47B /* DonutGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D4BC5E2C5CC53B0096B47B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D4BC602C5CC53B0096B47B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				D9D4BC5E2C5CC53B0096B47B /* AppDelegate.swift */,
+				D94C6AF52C6206E4007BA7C0 /* CollectionViewCell.swift */,
 				D9D4BC602C5CC53B0096B47B /* SceneDelegate.swift */,
 				D9D4BC622C5CC53B0096B47B /* ViewController.swift */,
 				D9D4BC642C5CC53B0096B47B /* Main.storyboard */,
@@ -155,6 +158,7 @@
 			files = (
 				D9D4BC632C5CC53B0096B47B /* ViewController.swift in Sources */,
 				D9D4BC5F2C5CC53B0096B47B /* AppDelegate.swift in Sources */,
+				D94C6AF62C6206E4007BA7C0 /* CollectionViewCell.swift in Sources */,
 				D9D4BC612C5CC53B0096B47B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

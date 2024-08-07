@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23068.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,28 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8p-qi-EgN" userLabel="dough">
-                                <rect key="frame" x="76" y="120" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q8p-qi-EgN" userLabel="dough">
+                                <rect key="frame" x="76" y="120" width="241" height="128"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QtC-Ju-7zU" userLabel="glaze">
-                                <rect key="frame" x="76" y="120" width="240" height="128"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVC-93-TZy" userLabel="topping">
-                                <rect key="frame" x="76" y="120" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QtC-Ju-7zU" userLabel="glaze">
+                                <rect key="frame" x="76" y="120" width="241" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="jPk-hM-Y64"/>
+                                    <constraint firstAttribute="height" constant="128" id="89Y-m1-gzo"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWG-Lf-VPe">
-                                <rect key="frame" x="153" y="294" width="86" height="35"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVC-93-TZy" userLabel="topping">
+                                <rect key="frame" x="76" y="120" width="241" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWG-Lf-VPe">
+                                <rect key="frame" x="153" y="294" width="87" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="CREATE"/>
                                 <connections>
                                     <action selector="createRandomDonut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMY-b9-ktU"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-yt-qwf">
-                                <rect key="frame" x="76" y="377" width="240" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-yt-qwf">
+                                <rect key="frame" x="76" y="377" width="241" height="32"/>
                                 <segments>
                                     <segment title="Dough"/>
                                     <segment title="Glaze"/>
@@ -47,33 +48,42 @@
                                     <action selector="onSegmentPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="P0c-lu-zHa"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AM2-xZ-JJK">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dsw-S2-7by">
                                 <rect key="frame" x="16" y="416" width="361" height="402"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="labelCell" textLabel="pVw-Gm-3av" style="IBUITableViewCellStyleDefault" id="IHW-03-3Dj">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IHW-03-3Dj" id="KpH-6B-d9F">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="43.666667938232422"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="s8j-Pj-tAk">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="W6O-JO-duD" customClass="CollectionViewCell" customModule="DonutGenerator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rDl-Js-XFp">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pVw-Gm-3av">
-                                                    <rect key="frame" x="20" y="0.0" width="321" height="43.666667938232422"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-Zm-kAm">
+                                                    <rect key="frame" x="8" y="67" width="84" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="donutLabel" destination="gQp-Zm-kAm" id="SZ8-88-urC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YKU-P1-NxZ"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KrE-7u-Akf"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="6Xe-Fe-n5O"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SOK-tn-hlu"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -84,21 +94,25 @@
                             <constraint firstItem="eWG-Lf-VPe" firstAttribute="top" secondItem="q8p-qi-EgN" secondAttribute="bottom" constant="46" id="AiM-0o-6TY"/>
                             <constraint firstItem="MVC-93-TZy" firstAttribute="top" secondItem="QtC-Ju-7zU" secondAttribute="top" id="C0L-aB-Q1D"/>
                             <constraint firstItem="q8p-qi-EgN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="C6j-O4-Tbe"/>
-                            <constraint firstItem="AM2-xZ-JJK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Dod-zd-h06"/>
-                            <constraint firstItem="YQ8-yt-qwf" firstAttribute="centerX" secondItem="AM2-xZ-JJK" secondAttribute="centerX" id="Iez-nx-7pk"/>
+                            <constraint firstItem="YQ8-yt-qwf" firstAttribute="centerX" secondItem="dsw-S2-7by" secondAttribute="centerX" id="IsI-Fe-mTP"/>
+                            <constraint firstItem="dsw-S2-7by" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Kfl-Xl-kN6"/>
+                            <constraint firstItem="q8p-qi-EgN" firstAttribute="centerX" secondItem="dsw-S2-7by" secondAttribute="centerX" id="Lda-hD-Wbu"/>
                             <constraint firstItem="QtC-Ju-7zU" firstAttribute="leading" secondItem="YQ8-yt-qwf" secondAttribute="leading" id="N3G-RQ-cHS"/>
+                            <constraint firstItem="MVC-93-TZy" firstAttribute="centerX" secondItem="dsw-S2-7by" secondAttribute="centerX" id="OBY-pc-7KB"/>
                             <constraint firstItem="q8p-qi-EgN" firstAttribute="trailing" secondItem="YQ8-yt-qwf" secondAttribute="trailing" id="PUb-PX-sqO"/>
+                            <constraint firstItem="dsw-S2-7by" firstAttribute="top" secondItem="YQ8-yt-qwf" secondAttribute="bottom" constant="8" id="RA2-92-ZYi"/>
                             <constraint firstItem="eWG-Lf-VPe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="153" id="Ukg-Io-YaT"/>
-                            <constraint firstItem="AM2-xZ-JJK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VS6-a2-3w8"/>
-                            <constraint firstItem="AM2-xZ-JJK" firstAttribute="top" secondItem="YQ8-yt-qwf" secondAttribute="bottom" constant="8" id="WJF-po-oH5"/>
                             <constraint firstItem="QtC-Ju-7zU" firstAttribute="trailing" secondItem="q8p-qi-EgN" secondAttribute="trailing" id="eOj-nC-XDM"/>
                             <constraint firstItem="MVC-93-TZy" firstAttribute="leading" secondItem="q8p-qi-EgN" secondAttribute="leading" id="eet-Z0-c8K"/>
                             <constraint firstItem="eWG-Lf-VPe" firstAttribute="centerX" secondItem="YQ8-yt-qwf" secondAttribute="centerX" id="ehs-5h-aE1"/>
                             <constraint firstItem="MVC-93-TZy" firstAttribute="bottom" secondItem="q8p-qi-EgN" secondAttribute="bottom" id="f9t-Ud-P8z"/>
+                            <constraint firstItem="QtC-Ju-7zU" firstAttribute="centerX" secondItem="dsw-S2-7by" secondAttribute="centerX" id="h6a-Ur-bJv"/>
                             <constraint firstItem="QtC-Ju-7zU" firstAttribute="bottom" secondItem="q8p-qi-EgN" secondAttribute="bottom" id="kBv-hL-c9r"/>
                             <constraint firstItem="QtC-Ju-7zU" firstAttribute="leading" secondItem="MVC-93-TZy" secondAttribute="leading" id="l2g-Hu-fq1"/>
-                            <constraint firstItem="AM2-xZ-JJK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="m2x-dW-hEe"/>
+                            <constraint firstItem="MVC-93-TZy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="opD-0H-kJE"/>
                             <constraint firstItem="QtC-Ju-7zU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="rmF-E3-AcS"/>
+                            <constraint firstItem="dsw-S2-7by" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x31-VZ-pfx"/>
+                            <constraint firstItem="eWG-Lf-VPe" firstAttribute="centerX" secondItem="dsw-S2-7by" secondAttribute="centerX" id="zlF-nk-lHF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d28-YY-xiy"/>
@@ -106,7 +120,7 @@
                         <outlet property="donutSegmentControl" destination="YQ8-yt-qwf" id="1Yo-x7-sEh"/>
                         <outlet property="doughImageView" destination="q8p-qi-EgN" id="b3H-MX-vS6"/>
                         <outlet property="glazeImageView" destination="QtC-Ju-7zU" id="VgC-KP-gy1"/>
-                        <outlet property="tableview" destination="AM2-xZ-JJK" id="W6t-xf-aWu"/>
+                        <outlet property="gridCollectionView" destination="dsw-S2-7by" id="aLd-IF-uCx"/>
                         <outlet property="toppingImageView" destination="MVC-93-TZy" id="S3w-cu-avZ"/>
                     </connections>
                 </viewController>

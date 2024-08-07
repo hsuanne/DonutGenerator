@@ -8,14 +8,12 @@
 import UIKit
 import FoodTruckKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class ViewController: UIViewController {
     @IBOutlet weak var doughImageView: UIImageView!
     @IBOutlet weak var glazeImageView: UIImageView!
     @IBOutlet weak var toppingImageView: UIImageView!
     @IBOutlet weak var donutSegmentControl: UISegmentedControl!
-    
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var gridCollectionView: UICollectionView!
     var currentTableView: Int!
     
     override func viewDidLoad() {
@@ -23,43 +21,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         currentTableView = 0
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch donutSegmentControl.selectedSegmentIndex {
-        case 0:
-            return Donut.Dough.all.count
-            
-        case 1:
-            return Donut.Glaze.all.count
-
-        case 2:
-            return Donut.Topping.all.count
-
-        default:
-            return Donut.Dough.all.count
-        }
+    func setupCollectionView() {
+        gridCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 4
+        gridCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell")
-        
-        
-        switch donutSegmentControl.selectedSegmentIndex {
-        case 0:
-            cell?.textLabel?.text = mapDoughToNames(doughs: Donut.Dough.all)[indexPath.row]
-            
-        case 1:
-            cell?.textLabel?.text = mapGlazeToNames(glazes: Donut.Glaze.all)[indexPath.row]
-
-        case 2:
-            cell?.textLabel?.text = mapToppingToNames(toppings: Donut.Topping.all)[indexPath.row]
-
-        default:
-            cell?.textLabel?.text = mapDoughToNames(doughs: Donut.Dough.all)[indexPath.row]
-        }
-        
-        
-        return cell!
-    }
     
     func mapDoughToNames(doughs: [Donut.Dough]) -> [String] {
         return doughs.map {$0.name}
@@ -75,8 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     @IBAction func onSegmentPressed(_ sender: Any) {
         currentTableView = donutSegmentControl.selectedSegmentIndex
-        tableview.reloadData()
-
+        gridCollectionView.reloadData()
     }
     
     
@@ -102,6 +72,50 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch donutSegmentControl.selectedSegmentIndex {
+        case 0:
+            return Donut.Dough.all.count
+            
+        case 1:
+            return Donut.Glaze.all.count
+
+        case 2:
+            return Donut.Topping.all.count
+
+        default:
+            return Donut.Dough.all.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        
+        switch donutSegmentControl.selectedSegmentIndex {
+        case 0:
+            cell.donutLabel.text = mapDoughToNames(doughs: Donut.Dough.all)[indexPath.row]
+            
+        case 1:
+            cell.donutLabel.text = mapGlazeToNames(glazes: Donut.Glaze.all)[indexPath.row]
+
+        case 2:
+            cell.donutLabel.text = mapToppingToNames(toppings: Donut.Topping.all)[indexPath.row]
+
+        default:
+            cell.donutLabel.text = mapDoughToNames(doughs: Donut.Dough.all)[indexPath.row]
+        }
+            
+        
+        return cell
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        <#code#>
+//    }
+    
+}
 
 
 #Preview {
