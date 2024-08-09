@@ -9,6 +9,5 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var donutLabel: UILabel!
-    
     @IBOutlet weak var donutThumbnail: UIImageView!
 }

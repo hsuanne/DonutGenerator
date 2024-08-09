@@ -70,6 +70,8 @@ class ViewController: UIViewController {
         let toppings = Donut.Topping.all
         return toppings.randomElement() ?? Donut.Topping.sprinkles
     }
+    
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -112,6 +114,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let itemNum = indexPath.row
+                
+        switch donutSegmentControl.selectedSegmentIndex {
+        case 0:
+            doughImageView.image = Donut.Dough.all[itemNum].uiImage(thumbnail: false)
+            
+        case 1:
+            glazeImageView.image = Donut.Glaze.all[itemNum].uiImage(thumbnail: false)
+
+        case 2:
+            toppingImageView.image = Donut.Topping.all[itemNum].uiImage(thumbnail: false)
+
+        default:
+            doughImageView.image = Donut.Dough.all[itemNum].uiImage(thumbnail: false)
+        }
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
